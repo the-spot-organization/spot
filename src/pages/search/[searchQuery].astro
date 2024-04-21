@@ -1,0 +1,12 @@
+---
+import Layout from '@layouts/Layout.astro';
+const res = await fetch(`http://localhost:4321/api/search/${Astro.params.searchQuery}.json`);
+const data = await res.json();
+
+---
+
+<Layout title="Welcum to Astro.">
+	<main>
+		{JSON.stringify(data)}
+	</main>
+</Layout>
